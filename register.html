@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="stylezz.css">
+    <script>
+        // function validateEmail() {
+        //     e = document.getElementById("newEmail").value
+        //     if (e == '') {
+        //         return false
+        //     } else {
+        //         e = document.getElementById("newEmail").value
+        //         var re = /\S+@\S+\.\S+/;
+        //         if (re.test(e) == false) {
+        //             alert("Invalid email format\nEmail format should be example@example.com")
+        //             return false;
+        //         }
+        //     }
+        // }
+        function Passvalidate() {
+            p = document.getElementById("newPass").value
+            p2 = document.getElementById("newPass2").value
+            if (p == '' || p2 == '') {
+               return false
+            }
+            else if (p != p2) {
+                alert("Passwords do not match")
+                return false
+            }
+        }
+        function Regvalidate() {
+            n = document.getElementById("newName").value
+            e = document.getElementById("newEmail").value
+            p = document.getElementById("newPass").value
+            p2 = document.getElementById("newPass2").value
+            var re = /\S+@\S+\.\S+/;
+            if (e == '' && p == '' && p2 == '' && n == '') {
+                alert("HEY! FILL THE FORM! 😐")
+                return false
+            }
+            else if (e == '') {
+                alert("OOPS! You forgot to enter your email")
+                return false
+            } else if (p == '') {
+                alert("OOPS! You forgot to enter your password")
+                if (re.test(e) == false) {
+                    alert("Invalid email format\nEmail format should be example@example.com")
+                }
+                return false
+            } else if (p2 == '') {
+                alert("OOPS! You forgot to confirm your password")
+                if (re.test(e) == false) {
+                    alert("Invalid email format\nEmail format should be example@example.com")
+                }
+                return false
+            } else if (n == '') {
+                alert("OOPS! You forgot to enter your name")
+                if (re.test(e) == false) {
+                    alert("Invalid email format\nEmail format should be example@example.com")
+                }
+                return false
+            }
+            document.getElementById("regForm").reset();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
+        <center>Hello Stranger!</center>
+    </h1>
+    <form id="regForm" name="regForm" action="register.php" onsubmit="return Passvalidate(); return Regvalidate();" method="post">
+        <h3><label>Enter your name:</label></h3>
+        <input type="text" id="newName" name="newName" placeholder="e.g. Tom" required><br>
+        <h3><label>Enter your email:</label></h3>
+        <input type="email" id="newEmail" name="newEmail" placeholder="e.g tom@somewhere.com" required><br>
+        <h3><label>Enter your password:</label></h3>
+        <input type="password" id="newPass" name="newPass" placeholder="Password" required><br>
+        <h3><label>Confirm password:</label></h3>
+        <input type="password" id="newPass2" name="newPass2" placeholder="Confirm password" required><br>
+        <input type="submit" value="Add me" class="sub"><br> <button type="reset" value="Reset">Reset</button>
+
+    </form>
+</body>
+
+</html>

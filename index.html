@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="stylezz.css">
+    <script>
+        // function validateEmail(mail) {
+        //     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) {
+        //         return (true)
+        //     }
+        //     alert("You have entered an invalid email address!")
+        //     return (false)
+        // }
+        // function validateEmail() {
+        //     e = document.getElementById("newEmail").value
+        //     if (e == '') {
+        //         return false
+        //     } else {
+        //         //var re = /\S+@\S+\.\S+/;
+        //         var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //         if (re.test(e) == false) {
+        //             alert("Invalid email format\nEmail format should be example@example.com")
+        //             return false;
+        //         }
+        //     }
+        // }
+        console.log("test printing")
+        function validate() {
+            e = document.getElementById("email").value
+            p = document.getElementById("password").value
+            if (e == '') {
+                alert("OOPS! You forgot to enter your email")
+                return false
+            } else if (p == '') {
+                alert("OOpS! You forgot to enter your password")
+                var re =  /\S+@\S+\.\S+/;
+                if (re.test(e) == false) {
+                    alert("Invalid email format\nEmail format should be example@example.com")
+                }
+                return false
+            }
+            //document.getElementById("entryForm").reset();
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Log in</h1>
+    <div class="form-container">
+        <form id="entryForm" name="entryForm" action="entry.php" onsubmit="return validate()" method="post">
+            <h3><label for="email">Email:</label></h3><br>
+            <input type="email" id="email" name="emailEntered" placeholder="e.g tom@somewhere.com" required><br>
+            <h3><label for="password">Password:</label></h3><br>
+            <input type="password" id="password" name="passEntered" placeholder="Password"><br>
+            <h3 style="color: white;">Don't have an account? <a style="color: aliceblue;" href="register.html">Click to
+                    register</a></h3>
+            <input type="submit" value="Submit" class="sub" onclick="getFields()"><br>
+        </form>
+    </div>
+</body>
