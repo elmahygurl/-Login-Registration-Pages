@@ -20,6 +20,8 @@ This mini project leverages a stack of powerful technologies and tools to delive
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** PHP
 - **Database:** SQL (Structured Query Language)
+- **Database Management:** MySQL, MyPHPAdmin
+- **Server Environment:** XAMPP
 - **Styling:** CSS for aesthetically pleasing and responsive design
 - **Interaction:** JavaScript for enhanced user experience
 
