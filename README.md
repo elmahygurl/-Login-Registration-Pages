@@ -2,6 +2,7 @@
 ## Project Overview
 A  robust mini web application designed to streamline user authentication and interaction. This project aims to provide a secure and user-friendly environment for account management and access control.
 
+Live link: https://elmahygurl.github.io/Login-Registration-Pages/ 
 ## Key Features
 
 - **User Registration:** Easily create a new account with a straightforward registration process.
